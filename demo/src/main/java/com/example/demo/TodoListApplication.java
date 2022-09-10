@@ -16,14 +16,12 @@ public class TodoListApplication {
 	@Autowired
 	private TodoRepository todoRepository;
 
-	@Autowired
-	private Todo todo;
-
 	@Bean
 	public CommandLineRunner init() {
 		return new CommandLineRunner() {
 			@Override
 			public void run(String... args) throws Exception {
+				Todo todo = new Todo();
 				todo.setDescription("Estudar Spring");
 				todo.setCreatedDate(LocalDateTime.now());
 				todoRepository.save(todo);
