@@ -9,6 +9,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/api/todos")
+@CrossOrigin("http://localhost:4200")
 public class TodoController {
 
     @Autowired
