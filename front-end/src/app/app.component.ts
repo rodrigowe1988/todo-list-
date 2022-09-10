@@ -39,5 +39,8 @@ export class AppComponent implements OnInit {
     });
   }
 
-  update(todo: Todo) {}
+  update(todo: Todo) {
+    const teste = this.todoService.atualizar(todo.id!, todo);
+    console.log(todo, teste);
+  }
 }

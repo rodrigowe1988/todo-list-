@@ -24,5 +24,8 @@ export class TodoService {
     return this.http.delete<void>(url);
   }
 
-  atualizar() {}
+  atualizar(id: number, todo: Todo): Observable<Todo> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.put<Todo>(url, todo);
+  }
 }
