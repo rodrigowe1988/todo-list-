@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/todos")
 @CrossOrigin("http://localhost:4200")
@@ -18,6 +20,11 @@ public class TodoController {
     @PostMapping
     public Todo save(@RequestBody Todo todo) {
         return repository.save(todo);
+    }
+
+    @GetMapping
+    public List<Todo> getAll() {
+        return repository.findAll();
     }
 
     @GetMapping("{id}")
